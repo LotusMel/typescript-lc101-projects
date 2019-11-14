@@ -26,11 +26,19 @@ export class Rocket implements Payload {
     }
 
     currentMassKg(): number{
-        // Uses this.sumMass to return the combined mass of this.astronauts and this.cargoItems
         return this.sumMass(this.astronauts) + this.sumMass(this.cargoItems);
     }
+    
+    canAdd(items: Payload): boolean{
+        if(this.currentMassKg() + items.massKg <= this.totalCapacityKg) {
+            return true;
+        } else{
+            return false;
+        }
+    }
 
-
-
+    addCargo(cargo: Cargo) {
+        
+    }
 
 }
