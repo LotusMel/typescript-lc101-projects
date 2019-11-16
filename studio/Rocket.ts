@@ -3,15 +3,15 @@ import { Cargo } from './Cargo';
 import { Astronaut } from './Astronaut';
 
 export class Rocket implements Payload {
-    massKg: number;
     totalCapacityKg: number;
     name: string;
     cargoItems: Cargo[];
     astronauts: Astronaut[];
+    massKg: number;
 
-    constructor(totalCapacityKg: number, name: string) {
-        this.totalCapacityKg = totalCapacityKg;
+    constructor(name: string, totalCapacityKg: number) {
         this.name = name;
+        this.totalCapacityKg = totalCapacityKg;
     }
 
     sumMass(items: Payload[]): number {
